@@ -9,8 +9,8 @@ import LandingPage from '../src/LandingPage'
 
 export default function Index() {
   return (
-    <Container maxWidth="md">
-      <Box sx={{ my: 4 }}>
+    <Container maxWidth="lg">
+      <Box sx={{ my: 2 }}>
         {/* <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
           Material UI - Next.js example
         </Typography> */}

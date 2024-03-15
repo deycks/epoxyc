@@ -84,14 +84,14 @@ export default function LandingPage() {
         <Hero />
         {/* <LogoCollection /> */}
         <Gallery/>
-        {/* <Features /> */}
-        {/* <Divider />
-        <Testimonials />
+        <Features />
+        <Divider />
+        {/* <Testimonials />
         <Divider />
         <Highlights />
         <Divider />
-        <Pricing /> */}
-        <Divider />
+        <Pricing /> 
+        <Divider /> */}
         <FAQ />
         <Divider />
         {/* <Footer /> */}

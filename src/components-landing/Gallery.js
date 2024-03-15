@@ -61,20 +61,26 @@ export default function Gallery() {
 
   return (
     <div>
-    <Box id="gallery" sx={{ py: 4 }}>
+    <Box id="gallery" sx={{ py: 4 ,color: 'black',
+        bgcolor: '#ddedfe',}}>
 
     <Typography
         component="h2"
         variant="h4"
-        color="text.primary"
         sx={{
-          width: { sm: '100%', md: '60%' },
-          textAlign: { sm: 'left', md: 'center' },
+          width: { xs: "100%",sm: '100%', md: '100%' },
+          textAlign: { xs: "center",sm: 'center', md: 'center' },
         }}
       >
-        Frequently asked questions
+        Gallery
       </Typography>
-      <ImageList>
+      <ImageList
+      sx={{
+        marginLeft:3,
+        marginRight:3,
+        width: { sm: '90%', md: '90%' },
+        height: { sm: '100%', md: '100%' }
+      }}>
       {logos.map((logo, index) => (
         <ImageListItem key={index}
         onClick={(event) => { handleClickOpen(logo) }}
@@ -101,8 +107,8 @@ export default function Gallery() {
           id="imageGallery"
           sx={(theme) => ({
             alignSelf: 'center',
-            height: { xs: 300, sm: 700, md:435 },
-            width: { xs: 390, sm: 700, md:552 },
+            height: {  xs: 300, sm: 700, md:435 },
+            width: { xs: 300, sm: 700, md:552 },
             backgroundImage:
               theme.palette.mode === 'light'
                 ? 'url(' + image + ')'
