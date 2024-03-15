@@ -22,6 +22,9 @@ import getLPTheme from './getLPTheme';
 import Gallery from './components-landing/Gallery';
 
 function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
+  const handleClose = () => {
+    alert();
+  };
   return (
     <Box
       sx={{
@@ -37,7 +40,6 @@ function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
         color="primary"
         exclusive
         value={showCustomTheme}
-        onChange={toggleCustomTheme}
         aria-label="Platform"
         sx={{
           backgroundColor: 'background.default',
@@ -46,7 +48,7 @@ function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
           },
         }}
       >
-        <ToggleButton value>
+        <ToggleButton  onClick={() => window.open("https://wa.me/18329984928?text=I'm%20interested%20in%20your%20epoxy%20flooring%20projects", '_blank', 'noopener')}>
           <WhatsAppIcon sx={{ fontSize: '20px', mr: 1 }} />
           Chat with us
         </ToggleButton>

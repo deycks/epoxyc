@@ -20,7 +20,7 @@ const items = [
     icon: <PersonIcon />,
     title: 'Jhon Dhoe',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
+      'Aqui vamos a poner los comentarios de alguna persona con la que hayamos trabajado',
     imageLight: 'url("/garage2.jpeg")',
     imageDark: 'url("/images/garage2.jpeg")',
   },
@@ -28,7 +28,7 @@ const items = [
     icon: <Person2Icon />,
     title: 'Katherine Smith',
     description:
-      'This item could provide information about the mobile app version of the product.',
+      'Aqui vamos a poner los comentarios de alguna persona con la que hayamos trabajado',
     imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
@@ -36,7 +36,7 @@ const items = [
     icon: <PersonIcon />,
     title: 'Patrick Morales',
     description:
-      'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
+      'Aqui vamos a poner los comentarios de alguna persona con la que hayamos trabajado',
     imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
   },
