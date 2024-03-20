@@ -20,6 +20,7 @@ import Footer from './components-landing/Footer';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import getLPTheme from './getLPTheme';
 import Gallery from './components-landing/Gallery';
+import CoatingProcess from './components-landing/CoatingProcess';
 
 function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
   const handleClose = () => {
@@ -85,7 +86,11 @@ export default function LandingPage() {
       <Box sx={{ bgcolor: 'background.default' }}>
         <Hero />
         {/* <LogoCollection /> */}
+        <Divider/>
+        <CoatingProcess/>
+        <Divider/>
         <Gallery/>
+        <Divider/>
         <Features />
         <Divider />
         {/* <Testimonials />
