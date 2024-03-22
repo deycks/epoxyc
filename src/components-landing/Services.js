@@ -116,7 +116,7 @@ export default function Services() {
       backgroundRepeat: 'no-repeat'
     })}>
       <Grid container sx={{
-        marginLeft:{ xs: "10%", sm: "20%", md: "1.5%" }
+        marginLeft:{ xs: "1%", sm: "20%", md: "1.5%" }
       }}>
         <Typography
           component="h2"
@@ -128,6 +128,7 @@ export default function Services() {
             textAlign: { xs: "center", sm: "center", md: "center" },
           }}
         >
+          <br/>
           Our Coating Services
           <br/>
         </Typography>

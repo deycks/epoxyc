@@ -37,8 +37,6 @@ export default function Pricing() {
     <Container
       id="procedure"
       sx={{
-        pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -48,11 +46,11 @@ export default function Pricing() {
     >
       <Box
         sx={{
-          width: { sm: '100%', md: '80%' },
+          width: { sm: '90%', md: '80%' },
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
-        <Typography component="h2" variant="h4" color="text.primary">
+        <Typography component="h2" variant="h4" color="text.primary" justifyContent="center">
           Procedure
         </Typography>
       </Box>
@@ -64,10 +62,11 @@ export default function Pricing() {
           >
             <Card
               sx={{
-                p: 2,
+                p: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 4,
+                alignItems: 'center',
                 border: tier.title === 'Professional' ? '1px solid' : undefined,
                 borderColor:
                   tier.title === 'Professional' ? 'primary.main' : undefined,
@@ -106,7 +105,7 @@ export default function Pricing() {
                     />
                   )} */}
                 </Box>
-                <Typography component="h2" variant="h4" color="white">
+                <Typography component="h2" variant="h4" color="white" alignItems="center"  justifyContent="center">
           One - Day
         </Typography>
                 <Box
