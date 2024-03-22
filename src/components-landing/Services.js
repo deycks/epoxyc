@@ -116,7 +116,7 @@ export default function Services() {
       backgroundRepeat: 'no-repeat'
     })}>
       <Grid container sx={{
-        marginLeft:{ xs: "1%", sm: "20%", md: "1.5%" }
+        marginLeft:{ sm: "20%", md: "1.5%" }
       }}>
         <Typography
           component="h2"
