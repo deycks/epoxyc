@@ -8,8 +8,10 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-import FacebookIcon from '@mui/icons-material/GitHub';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import XIcon from '@mui/icons-material/X';
+
 
 const logoStyle = {
   width: '140px',
@@ -20,7 +22,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
+      <Link href="https://upscale-garage.com/">Upscale&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   );
@@ -38,7 +40,7 @@ export default function Footer() {
         textAlign: { sm: 'center', md: 'left' },
       }}
     >
-      <Box
+      {/* <Box
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' },
@@ -156,7 +158,7 @@ export default function Footer() {
             Contact
           </Link>
         </Box>
-      </Box>
+      </Box> */}
       <Box
         sx={{
           display: 'flex',
@@ -190,7 +192,7 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/mui"
+            href="https://facebook.com"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
@@ -206,11 +208,11 @@ export default function Footer() {
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://www.linkedin.com/company/mui/"
+            href="https://www.x.com/"
             aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >
-            <LinkedInIcon />
+            <XIcon />
           </IconButton>
         </Stack>
       </Box>

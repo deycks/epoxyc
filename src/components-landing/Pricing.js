@@ -13,18 +13,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 const tiers = [
-  {
-    title: 'Free',
-    price: '0',
-    description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
-    ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'outlined',
-  },
+  
   {
     title: 'Professional',
     subheader: 'Recommended',
@@ -39,25 +28,14 @@ const tiers = [
     ],
     buttonText: 'Start now',
     buttonVariant: 'contained',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
-    ],
-    buttonText: 'Contact us',
-    buttonVariant: 'outlined',
+    image:'/images/oneday.png'
   },
 ];
 
 export default function Pricing() {
   return (
     <Container
-      id="pricing"
+      id="procedure"
       sx={{
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
@@ -70,28 +48,19 @@ export default function Pricing() {
     >
       <Box
         sx={{
-          width: { sm: '100%', md: '60%' },
+          width: { sm: '100%', md: '80%' },
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
         <Typography component="h2" variant="h4" color="text.primary">
-          Pricing
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Quickly build an effective pricing table for your potential customers with
-          this layout. <br />
-          It&apos;s built with default Material UI components with little
-          customization.
+          Procedure
         </Typography>
       </Box>
-      <Grid container spacing={3} alignItems="center" justifyContent="center">
+      <Grid container spacing={1} alignItems="center" justifyContent="center">
         {tiers.map((tier) => (
           <Grid
             item
             key={tier.title}
-            xs={12}
-            sm={tier.title === 'Enterprise' ? 12 : 6}
-            md={4}
           >
             <Card
               sx={{
@@ -118,10 +87,10 @@ export default function Pricing() {
                     color: tier.title === 'Professional' ? 'grey.100' : '',
                   }}
                 >
-                  <Typography component="h3" variant="h6">
+                  {/* <Typography component="h3" variant="h6">
                     {tier.title}
-                  </Typography>
-                  {tier.title === 'Professional' && (
+                  </Typography> */}
+                  {/* {tier.title === 'Professional' && (
                     <Chip
                       icon={<AutoAwesomeIcon />}
                       label={tier.subheader}
@@ -129,18 +98,43 @@ export default function Pricing() {
                       sx={{
                         background: (theme) =>
                           theme.palette.mode === 'light' ? '' : 'none',
-                        backgroundColor: 'primary.contrastText',
-                        '& .MuiChip-label': {
-                          color: 'primary.dark',
-                        },
+                          backgroundImage: 'url(' + tier.image + ')',
                         '& .MuiChip-icon': {
                           color: 'primary.dark',
                         },
                       }}
                     />
-                  )}
+                  )} */}
                 </Box>
+                <Typography component="h2" variant="h4" color="white">
+          One - Day
+        </Typography>
                 <Box
+              sx={{
+                m: 'auto',
+                width: 420,
+                height: 250,
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundImage: (theme) =>
+                'url(' + tier.image + ')',
+              }}
+            />
+            <Typography component="h2" variant="h4" color="white">
+          Two - Day
+        </Typography>
+            <Box
+              sx={{
+                m: 'auto',
+                width: 420,
+                height: 250,
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundImage: (theme) =>
+                'url(/images/two-days.png)',
+              }}
+            />
+                {/* <Box
                   sx={{
                     display: 'flex',
                     alignItems: 'baseline',
@@ -160,8 +154,8 @@ export default function Pricing() {
                     opacity: 0.2,
                     borderColor: 'grey.500',
                   }}
-                />
-                {tier.description.map((line) => (
+                /> */}
+                {/* {tier.description.map((line) => (
                   <Box
                     key={line}
                     sx={{
@@ -191,14 +185,14 @@ export default function Pricing() {
                       {line}
                     </Typography>
                   </Box>
-                ))}
+                ))} */}
               </CardContent>
               <CardActions>
                 <Button
                   fullWidth
                   variant={tier.buttonVariant}
                   component="a"
-                  href="/material-ui/getting-started/templates/checkout/"
+                  href="/#"
                   target="_blank"
                 >
                   {tier.buttonText}

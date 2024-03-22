@@ -20,7 +20,7 @@ import Footer from './components-landing/Footer';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import getLPTheme from './getLPTheme';
 import Gallery from './components-landing/Gallery';
-import CoatingProcess from './components-landing/CoatingProcess';
+import Services from './components-landing/Services';
 
 function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
   const handleClose = () => {
@@ -87,21 +87,24 @@ export default function LandingPage() {
         <Hero />
         {/* <LogoCollection /> */}
         <Divider/>
-        <CoatingProcess/>
-        <Divider/>
-        <Gallery/>
-        <Divider/>
-        <Features />
-        <Divider />
-        {/* <Testimonials />
-        <Divider />
-        <Highlights />
-        <Divider />
         <Pricing /> 
+        <Divider /> 
+        <br/>
+
+        <Services/>
+        
+        <Gallery/>
+        {/* <Divider/>
+        <Features /> */}
+        <Divider />
+        <Testimonials />
+        <Divider />
+        {/* <Highlights />
         <Divider /> */}
+        
         <FAQ />
         <Divider />
-        {/* <Footer /> */}
+        <Footer /> 
       </Box>
       <ToggleCustomTheme
         showCustomTheme={showCustomTheme}
