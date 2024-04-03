@@ -21,6 +21,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import getLPTheme from './getLPTheme';
 import Gallery from './components-landing/Gallery';
 import Services from './components-landing/Services';
+import Quote from './components-landing/Quote';
 
 function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
   const handleClose = () => {
@@ -92,7 +93,7 @@ export default function LandingPage() {
         <br/>
 
         <Services/>
-        
+        <Quote/>
         <Gallery/>
         {/* <Divider/>
         <Features /> */}
