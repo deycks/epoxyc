@@ -186,7 +186,7 @@ export default function Pricing() {
                   </Box>
                 ))} */}
               </CardContent>
-              <CardActions>
+              {/* <CardActions>
                 <Button
                   fullWidth
                   variant={tier.buttonVariant}
@@ -196,7 +196,7 @@ export default function Pricing() {
                 >
                   {tier.buttonText}
                 </Button>
-              </CardActions>
+              </CardActions> */}
             </Card>
           </Grid>
         ))}

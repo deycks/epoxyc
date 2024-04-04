@@ -208,7 +208,7 @@ export default function Quote() {
               {Boolean(activeStep == 0) &&
                 services.map((item, index) => (
                   <img
-                    src={item.src}
+                    src={item.src+"?w=248&fit=crop&auto=format"}
                     alt=""
                     style={logoStyle}
                     onClick={() => {
