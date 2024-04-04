@@ -90,7 +90,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 alt="upscale garage"
               />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <MenuItem
+                <MenuItem
                   onClick={() => scrollToSection("procedure")}
                   sx={{ py: "6px", px: "12px" }}
                 >
@@ -104,6 +104,14 @@ function AppAppBar({ mode, toggleColorMode }) {
                 >
                   <Typography variant="body2" color="text.primary">
                     Services
+                  </Typography>
+                </MenuItem>
+                <MenuItem
+                  onClick={() => scrollToSection("quote")}
+                  sx={{ py: "6px", px: "12px" }}
+                >
+                  <Typography variant="body2" color="text.primary">
+                    Quote
                   </Typography>
                 </MenuItem>
                 <MenuItem
@@ -206,6 +214,9 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("services")}>
                     Services
+                  </MenuItem>
+                  <MenuItem onClick={() => scrollToSection("quote")}>
+                    Quote
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("gallery")}>
                     Portfolio

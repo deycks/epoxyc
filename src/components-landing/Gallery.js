@@ -136,6 +136,7 @@ export default function Gallery() {
 
   return (
     <div>
+      <br></br>
       <Box id="gallery" sx={(theme) => ({
       width: '100%',
       backgroundImage:

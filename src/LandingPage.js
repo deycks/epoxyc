@@ -93,7 +93,9 @@ export default function LandingPage() {
         <br/>
 
         <Services/>
+        <Divider />
         <Quote/>
+        <Divider />
         <Gallery/>
         {/* <Divider/>
         <Features /> */}
