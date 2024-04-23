@@ -9,7 +9,12 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { TextField, CardContent, Grid } from "@mui/material";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
+import Checkbox from "@mui/material/Checkbox";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 
 const steps = ["Select Coating Service", "Measures", "Quote"];
 
@@ -46,11 +51,17 @@ const logoStyle = {
 };
 
 export default function Quote() {
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChangeCheck = (event) => {
+    setChecked(event.target.checked);
+  };
   const [serviceSelected, setServiceSelected] = React.useState({});
   const [activeStep, setActiveStep] = React.useState(0);
   const [total, setTotal] = React.useState(0.0);
   const [errorMessage, setErrorMessage] = React.useState("");
   const [skipped, setSkipped] = React.useState(new Set());
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   const [values, setValues] = React.useState({
     width: "",
@@ -78,19 +89,29 @@ export default function Quote() {
     let price = services.find(
       (service) => service.id === serviceSelected.id
     ).price;
+    if (checked) {
+      price = price + 1;
+    }
     let total = sftq * price;
     setTotal(total.toFixed(2));
     handleNext();
   };
 
-  const continueQoute = () =>{
-    window.open("https://wa.me/18329984928?text="+
-                "Hi!!%0AI'm%20interested%20in%20your%20epoxy%20flooring%20Coating%20Service:%0A"+
-                serviceSelected.name+"%0A"+
-                "My measurements are:%0A"+
-                "Length: "+values.height +" Width: "+values.width, '_blank', 'noopener')
-                handleNext()
-  }
+  const continueQoute = () => {
+    window.open(
+      "https://wa.me/18329984928?text=" +
+        "Hi!!%0AI'm%20interested%20in%20your%20epoxy%20flooring%20Coating%20Service:%0A" +
+        serviceSelected.name +
+        "%0A" +
+        "My measurements are:%0A" +
+        checked
+        ? "With two coats of sealant"
+        : "" + "Length: " + values.height + " Width: " + values.width,
+      "_blank",
+      "noopener"
+    );
+    handleNext();
+  };
 
   const selectService = (item) => {
     setServiceSelected(item);
@@ -186,13 +207,14 @@ export default function Quote() {
           <React.Fragment>
             <Paper elevation={3}>
               <br></br>
-            <Typography sx={{ mt: 2, mb: 1 }}>
-            Please send your WhatsApp message and a professional agent coating will respond to your request soon.
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button onClick={handleReset}>Reset</Button>
-            </Box>
+              <Typography sx={{ mt: 2, mb: 1 }}>
+                Please send your WhatsApp message and a professional agent
+                coating will respond to your request soon.
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <Box sx={{ flex: "1 1 auto" }} />
+                <Button onClick={handleReset}>Reset</Button>
+              </Box>
             </Paper>
           </React.Fragment>
         ) : (
@@ -208,7 +230,7 @@ export default function Quote() {
               {Boolean(activeStep == 0) &&
                 services.map((item, index) => (
                   <img
-                    src={item.src+"?w=248&fit=crop&auto=format"}
+                    src={item.src + "?w=248&fit=crop&auto=format"}
                     alt=""
                     style={logoStyle}
                     onClick={() => {
@@ -258,6 +280,29 @@ export default function Quote() {
                       </Button>
                     </Grid>
                   </Grid>
+                  <FormControl component="fieldset">
+                    {/* <FormLabel component="legend">Label placement</FormLabel> */}
+                    <FormGroup aria-label="position" row>
+                      <FormControlLabel
+                        value="top"
+                        variant="body1"
+                        checked={checked}
+                    onChange={handleChangeCheck}
+                        color="text.secondary"
+                        control={<Checkbox />}
+                        label="Include 2 coats of sealant"
+                        labelPlacement="end"
+                      />
+                    </FormGroup>
+                  </FormControl>
+                  
+                  {/* <Checkbox
+                    {...label}
+                    checked={checked}
+                    onChange={handleChangeCheck}
+                    color="primary"
+                    label="Include 2 coats of sealant"
+                  /> */}
                 </CardContent>
               )}
 
@@ -272,12 +317,15 @@ export default function Quote() {
                   </Typography>
                   <br></br>
                   <Grid item md={3} xs={12}>
-                  <Typography variant="body2" color="text.secondary">
-                  Click to get personalized attention and give continuity to your quote
-                  </Typography>
-                    <Button variant="outlined"
-                    onClick={continueQoute} 
-                    startIcon={<SendIcon />}> 
+                    <Typography variant="body2" color="text.secondary">
+                      Click to get personalized attention and give continuity to
+                      your quote
+                    </Typography>
+                    <Button
+                      variant="outlined"
+                      onClick={continueQoute}
+                      startIcon={<SendIcon />}
+                    >
                       Continue
                     </Button>
                   </Grid>

@@ -61,7 +61,7 @@ const itemData = [
     img: "/images/services/solidcoat.jpg",
     title: "Solid Coat",
     psinopsis: "@bkristastucchio",
-    description:"Aqui podemos poner ua pequeña descripcion de este piso",
+    description:"This is the most affordable process that we offer , It is a 1 solid color coat with no texture . Some imperfections might still be visible . 10-15 years life spam.",
     rows: 2,
     cols: 2,
     featured: true,
@@ -69,7 +69,7 @@ const itemData = [
   {
     img: "/images/services/light-flake.png",
     title: "1 Base Coat - Light flake - 1 Top Coat",
-    description:"Aqui podemos poner ua pequeña descripcion de este piso",
+    description:"This is a 2 coat process with random flakes . This flor has a high gloss finish with little texture . 15-20+ years life spam",
     psinopsis: "@bkristastucchio",
     rows: 2,
     cols: 2,
@@ -77,7 +77,7 @@ const itemData = [
   },{
     img: "/images/services/full-flake.jpg",
     title: "1 Base Coat - 1 Full flake coat - 1 Top Coat",
-    description:"Aqui podemos poner ua pequeña descripcion de este piso",
+    description:"This is a very decorative floor it consist of 1 base coat ,1 full layer of  flakes , and 1 top coat sealer . This is a floor with good texture and covers all imperfections on your concrete . 15-20+ years life spam",
     psinopsis: "@bkristastucchio",
     rows: 2,
     cols: 2,
