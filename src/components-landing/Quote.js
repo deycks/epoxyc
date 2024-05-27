@@ -14,7 +14,9 @@ import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import SquareFootIcon from '@mui/icons-material/SquareFoot';
+import IconButton from '@mui/material/IconButton';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 const steps = ["Select Coating Service", "Measures", "Quote"];
 
@@ -248,12 +250,20 @@ export default function Quote() {
                   <Typography variant="body2" color="text.secondary">
                     Please enter the measurements of the place where you want to
                     put the coating
-                  </Typography>{" "}
+                  </Typography>
                   <br></br>
+
+                  <Typography variant="body2" color="text.secondary">
+                  Do you have questions about how to do the measurement?
+                  <IconButton aria-label="delete">
+                    <HelpOutlineIcon />
+                  </IconButton>
+                  </Typography>
+                  
                   {errorMessage}
                   <Grid container spacing={3}>
                     <Grid item md={3} xs={12}>
-                      <TextField
+                      {/* <TextField
                         fullWidth
                         label="Width"
                         name="width"
@@ -261,10 +271,23 @@ export default function Quote() {
                         onChange={handleChange}
                         value={values.width}
                         variant="outlined"
-                      />
+                      /> */}
+                      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                        <SquareFootIcon
+                          sx={{ color: "action.active", mr: 1, my: 0.5 }}
+                        />
+                        <TextField
+                          id="input-with-sx"
+                          label="Width"
+                          variant="standard"
+                          type="number"
+                          onChange={handleChange}
+                          value={values.width}
+                        />
+                      </Box>
                     </Grid>
                     <Grid item md={3} xs={12}>
-                      <TextField
+                      {/* <TextField
                         fullWidth
                         label="Length"
                         name="height"
@@ -272,7 +295,20 @@ export default function Quote() {
                         onChange={handleChange}
                         value={values.height}
                         variant="outlined"
-                      />
+                      /> */}
+                      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                        <SquareFootIcon
+                          sx={{ color: "action.active", mr: 1, my: 0.5 }}
+                        />
+                        <TextField
+                          id="input-with-sx"
+                          label="Length"
+                          variant="standard"
+                          type="number"
+                          onChange={handleChange}
+                          value={values.height}
+                        />
+                      </Box>
                     </Grid>
                     <Grid item md={3} xs={12}>
                       <Button variant="outlined" onClick={generateQuote}>
@@ -280,29 +316,29 @@ export default function Quote() {
                       </Button>
                     </Grid>
                   </Grid>
-                  <FormControl component="fieldset">
-                    {/* <FormLabel component="legend">Label placement</FormLabel> */}
+                  {Boolean(serviceSelected.id == 4) && (
+                      <>
+                      <FormControl component="fieldset">
                     <FormGroup aria-label="position" row>
                       <FormControlLabel
                         value="top"
-                        variant="body1"
+                        variant="body2"
                         checked={checked}
-                    onChange={handleChangeCheck}
+                        onChange={handleChangeCheck}
                         color="text.secondary"
                         control={<Checkbox />}
                         label="Include 2 coats of sealant"
                         labelPlacement="end"
                       />
                     </FormGroup>
-                  </FormControl>
-                  
-                  {/* <Checkbox
-                    {...label}
-                    checked={checked}
-                    onChange={handleChangeCheck}
-                    color="primary"
-                    label="Include 2 coats of sealant"
-                  /> */}
+                  </FormControl>  
+                      </>
+                    )}
+                  <br></br>
+                  <br></br>
+                  <Typography variant="body2" color="text.secondary">
+                    Note: The measurements must be on foots
+                  </Typography>
                 </CardContent>
               )}
 
