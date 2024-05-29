@@ -53,6 +53,10 @@ export default function Pricing() {
         <Typography component="h2" variant="h4" color="text.primary" justifyContent="center">
           Procedure
         </Typography>
+        <Typography variant="body1" color="text.secondary">
+          We have 2 types  of procedure that depends on the type of floor you want.
+          
+        </Typography>
       </Box>
       <Grid container spacing={1} alignItems="center" justifyContent="center">
         {tiers.map((tier) => (

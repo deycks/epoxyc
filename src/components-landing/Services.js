@@ -161,12 +161,12 @@ export default function Services() {
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
+              {/* <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton>
               <IconButton aria-label="share">
                 <ShareIcon />
-              </IconButton>
+              </IconButton> */}
               {/* <ExpandMore
                 expand={expanded}
                 onClick={handleExpandClick}
