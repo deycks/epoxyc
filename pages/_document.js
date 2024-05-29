@@ -11,6 +11,8 @@ export default function MyDocument(props) {
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="emotion-insertion-point" content="" />
+        <meta name="description" content="Experts on epoxic flooring coat"></meta>
+        <meta name="keywords" content="Epoxic Flooring Coating"></meta>
         <DocumentHeadTags {...props} />
       </Head>
       <body>
