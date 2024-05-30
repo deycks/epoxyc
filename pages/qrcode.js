@@ -20,8 +20,14 @@ export default function About() {
           console.log(error);
         });
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch(async function (error) {
+      await axios.post('/api/qrcode', {city:"-", country:"-", region:"-", loc:"-"})
+       .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     });
   }
 
