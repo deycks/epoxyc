@@ -92,7 +92,6 @@ function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
           setOpenSnackBar(true);
         })
       .catch((error) => {
-        alert(error)
         console.error("Error:", error)
         setOpenBackDrop(false)
       });
