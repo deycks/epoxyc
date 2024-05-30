@@ -13,8 +13,8 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions={
     from:"contact@upscalegarage.com",
-    //bcc:"ed.adrianmm@gmail.com",
-    to:"ed.adrianmm@gmail.com"
+    bcc:"ed.adrianmm@gmail.com",
+    to:"jrayo19@icloud.com"
 }
 
 //process.env.EMAIL_USER
