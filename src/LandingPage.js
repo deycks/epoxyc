@@ -306,8 +306,6 @@ export default function LandingPage() {
         <Hero />
         {/* <LogoCollection /> */}
         <Divider/>
-        <Pricing /> 
-        <Divider /> 
         <br/>
 
         <Services/>

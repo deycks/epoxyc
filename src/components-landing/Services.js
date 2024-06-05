@@ -65,7 +65,9 @@ const itemData = [
       "This is the most affordable process that we offer , It is a 1 solid color coat with no texture . Some imperfections might still be visible . 10-15 years life spam.",
     rows: 2,
     cols: 2,
+    item: 1,
     featured: true,
+    oneday: true,
   },
   {
     img: "/images/services/light-flake.png",
@@ -75,7 +77,9 @@ const itemData = [
     psinopsis: "@bkristastucchio",
     rows: 2,
     cols: 2,
+    item: 2,
     featured: true,
+    oneday: true,
   },
   {
     img: "/images/services/full-flake.jpg",
@@ -85,7 +89,9 @@ const itemData = [
     psinopsis: "@bkristastucchio",
     rows: 2,
     cols: 2,
+    item: 3,
     featured: true,
+    oneday: true,
   },
   {
     img: "/images/services/polyaspartic.jpg",
@@ -96,6 +102,7 @@ const itemData = [
     We offer this option for those who want a smoother finish and higher gloss . Adds more life to your floor 20+years life spam . Adding a second top coat sealer can cause the floor to be slippery when wet.`,
     psinopsis: "@bkristastucchio",
     rows: 2,
+    item: 4,
     cols: 2,
     featured: true,
     twodays: true,
@@ -105,10 +112,29 @@ const itemData = [
 export default function Services() {
   const theme = useTheme();
   const logos = theme.palette.mode === "light" ? darkLogos : whiteLogos;
-  const [expanded, setExpanded] = React.useState(false);
+  const [expandedTwoDays, setExpandedTwoDays] = React.useState(false);
+  const [expanded1, setExpanded1] = React.useState(false);
+  const [expanded2, setExpanded2] = React.useState(false);
+  const [expanded3, setExpanded3] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpand = (item) => {
+    switch (item.item) {
+      case 1:
+        setExpanded1(!expanded1);
+        break;
+      case 2:
+        setExpanded2(!expanded2);
+        break;
+      case 3:
+        setExpanded3(!expanded3);
+        break;
+      case 4:
+        setExpandedTwoDays(!expandedTwoDays);
+        break;
+
+      default:
+        break;
+    }
   };
 
   return (
@@ -177,44 +203,196 @@ export default function Services() {
               <IconButton aria-label="share">
                 <ShareIcon />
               </IconButton> */}
-                {Boolean(item.twodays) && (
-                  <ExpandMore
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
-                )}
+
+                {(() => {
+                  switch (item.item) {
+                    case 1:
+                      return (
+                        <ExpandMore
+                          expand={expanded1}
+                          onClick={() => handleExpand(item)}
+                          aria-expanded={expanded1}
+                          aria-label="show more"
+                        >
+                          <ExpandMoreIcon />
+                        </ExpandMore>
+                      );
+                    case 2:
+                      return (
+                        <ExpandMore
+                          expand={expanded2}
+                          onClick={() => handleExpand(item)}
+                          aria-expanded={expanded2}
+                          aria-label="show more"
+                        >
+                          <ExpandMoreIcon />
+                        </ExpandMore>
+                      );
+                    case 3:
+                      return (
+                        <ExpandMore
+                          expand={expanded3}
+                          onClick={() => handleExpand(item)}
+                          aria-expanded={expanded3}
+                          aria-label="show more"
+                        >
+                          <ExpandMoreIcon />
+                        </ExpandMore>
+                      );
+                    case 4:
+                      return (
+                        <ExpandMore
+                          expand={expandedTwoDays}
+                          onClick={() => handleExpand(item)}
+                          aria-expanded={expandedTwoDays}
+                          aria-label="show more"
+                        >
+                          <ExpandMoreIcon />
+                        </ExpandMore>
+                      );
+                    default:
+                      return null;
+                  }
+                })()}
               </CardActions>
-              {Boolean(item.twodays) && (
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                  <CardContent>
-                  <Typography component="h2" variant="h4" 
-                  sx={{
-                    color: (theme) => {
-                      if (theme.palette.mode === 'light') {
-                        return "black"
-                      }
-                      return "white"
-                    },
-                  }}>
-                  Two - Days Process
-                </Typography>
-                <Box
-                  sx={{
-                    m: "auto",
-                    width: 320,
-                    height: 250,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundImage: (theme) => "url(/images/two-days.png)",
-                  }}
-                />
-                  </CardContent>
-                </Collapse>
-              )}
+              {(() => {
+                switch (item.item) {
+                  case 1:
+                    return (
+                      <Collapse in={expanded1} timeout="auto" unmountOnExit>
+                        <CardContent>
+                          <Typography
+                            component="h2"
+                            variant="h4"
+                            sx={{
+                              color: (theme) => {
+                                if (theme.palette.mode === "light") {
+                                  return "black";
+                                }
+                                return "white";
+                              },
+                            }}
+                          >
+                            One - Day Process
+                          </Typography>
+                          <Box
+                            sx={{
+                              m: "auto",
+                              width: 320,
+                              height: 250,
+                              backgroundSize: "contain",
+                              backgroundRepeat: "no-repeat",
+                              backgroundImage: (theme) =>
+                                "url(/images/oneday.png)",
+                            }}
+                          />
+                        </CardContent>
+                      </Collapse>
+                    );
+                  case 2:
+                    return (
+                      <Collapse in={expanded2} timeout="auto" unmountOnExit>
+                        <CardContent>
+                          <Typography
+                            component="h2"
+                            variant="h4"
+                            sx={{
+                              color: (theme) => {
+                                if (theme.palette.mode === "light") {
+                                  return "black";
+                                }
+                                return "white";
+                              },
+                            }}
+                          >
+                            One - Day Process
+                          </Typography>
+                          <Box
+                            sx={{
+                              m: "auto",
+                              width: 320,
+                              height: 250,
+                              backgroundSize: "contain",
+                              backgroundRepeat: "no-repeat",
+                              backgroundImage: (theme) =>
+                                "url(/images/oneday.png)",
+                            }}
+                          />
+                        </CardContent>
+                      </Collapse>
+                    );
+                  case 3:
+                    return (
+                      <Collapse in={expanded3} timeout="auto" unmountOnExit>
+                        <CardContent>
+                          <Typography
+                            component="h2"
+                            variant="h4"
+                            sx={{
+                              color: (theme) => {
+                                if (theme.palette.mode === "light") {
+                                  return "black";
+                                }
+                                return "white";
+                              },
+                            }}
+                          >
+                            One - Day Process
+                          </Typography>
+                          <Box
+                            sx={{
+                              m: "auto",
+                              width: 320,
+                              height: 250,
+                              backgroundSize: "contain",
+                              backgroundRepeat: "no-repeat",
+                              backgroundImage: (theme) =>
+                                "url(/images/oneday.png)",
+                            }}
+                          />
+                        </CardContent>
+                      </Collapse>
+                    );
+                  case 4:
+                    return (
+                      <Collapse
+                        in={expandedTwoDays}
+                        timeout="auto"
+                        unmountOnExit
+                      >
+                        <CardContent>
+                          <Typography
+                            component="h2"
+                            variant="h4"
+                            sx={{
+                              color: (theme) => {
+                                if (theme.palette.mode === "light") {
+                                  return "black";
+                                }
+                                return "white";
+                              },
+                            }}
+                          >
+                            Two - Days Process
+                          </Typography>
+                          <Box
+                            sx={{
+                              m: "auto",
+                              width: 320,
+                              height: 250,
+                              backgroundSize: "contain",
+                              backgroundRepeat: "no-repeat",
+                              backgroundImage: (theme) =>
+                                "url(/images/two-days.png)",
+                            }}
+                          />
+                        </CardContent>
+                      </Collapse>
+                    );
+                  default:
+                    return null;
+                }
+              })()}
             </Card>
           </Grid>
         ))}
