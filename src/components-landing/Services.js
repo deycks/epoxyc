@@ -18,7 +18,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Grid } from "@mui/material";
-import { alpha } from '@mui/material';
+import { alpha } from "@mui/material";
 
 const whiteLogos = [
   "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/6560628e8573c43893fe0ace_Sydney-white.svg",
@@ -61,7 +61,8 @@ const itemData = [
     img: "/images/services/solidcoat.jpg",
     title: "Solid Coat",
     psinopsis: "@bkristastucchio",
-    description:"This is the most affordable process that we offer , It is a 1 solid color coat with no texture . Some imperfections might still be visible . 10-15 years life spam.",
+    description:
+      "This is the most affordable process that we offer , It is a 1 solid color coat with no texture . Some imperfections might still be visible . 10-15 years life spam.",
     rows: 2,
     cols: 2,
     featured: true,
@@ -69,28 +70,36 @@ const itemData = [
   {
     img: "/images/services/light-flake.png",
     title: "1 Base Coat - Light flake - 1 Top Coat",
-    description:"This is a 2 coat process with random flakes . This flor has a high gloss finish with little texture . 15-20+ years life spam",
+    description:
+      "This is a 2 coat process with random flakes . This flor has a high gloss finish with little texture . 15-20+ years life spam",
     psinopsis: "@bkristastucchio",
     rows: 2,
     cols: 2,
     featured: true,
-  },{
+  },
+  {
     img: "/images/services/full-flake.jpg",
     title: "1 Base Coat - 1 Full flake coat - 1 Top Coat",
-    description:"This is a very decorative floor it consist of 1 base coat ,1 full layer of  flakes , and 1 top coat sealer . This is a floor with good texture and covers all imperfections on your concrete . 15-20+ years life spam",
+    description:
+      "This is a very decorative floor it consist of 1 base coat ,1 full layer of  flakes , and 1 top coat sealer . This is a floor with good texture and covers all imperfections on your concrete . 15-20+ years life spam",
     psinopsis: "@bkristastucchio",
     rows: 2,
     cols: 2,
     featured: true,
-  },{
+  },
+  {
     img: "/images/services/polyaspartic.jpg",
     title: "1 Base Coat - 1 Full flake coat - 2 Polyaspartic Top Coats",
-    description:"Aqui podemos poner ua pequeña descripcion de este piso",
+    description: `This is our 3 coat process. 
+    It consist of 1 base coat - 1 full flake  - and 2 top coat sealer. 
+    It takes 2 days to finish the process. 
+    We offer this option for those who want a smoother finish and higher gloss . Adds more life to your floor 20+years life spam . Adding a second top coat sealer can cause the floor to be slippery when wet.`,
     psinopsis: "@bkristastucchio",
     rows: 2,
     cols: 2,
     featured: true,
-  }
+    twodays: true,
+  },
 ];
 
 export default function Services() {
@@ -106,113 +115,109 @@ export default function Services() {
     <Box
       id="services"
       sx={(theme) => ({
-      width: '100%',
-      backgroundImage:
-        theme.palette.mode === 'light'
-          ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
-          : `linear-gradient(#90caf9, ${alpha('#090E10', 0.0)})`,
-      backgroundSize: '100% 60%',
-      borderRadius:"30px",
-      backgroundRepeat: 'no-repeat'
-    })}>
-      <Grid container sx={{
-        marginLeft:{ sm: "20%", md: "1.5%" }
-      }}>
+        width: "100%",
+        backgroundImage:
+          theme.palette.mode === "light"
+            ? "linear-gradient(180deg, #CEE5FD, #FFF)"
+            : `linear-gradient(#90caf9, ${alpha("#090E10", 0.0)})`,
+        backgroundSize: "100% 60%",
+        borderRadius: "30px",
+        backgroundRepeat: "no-repeat",
+      })}
+    >
+      <Grid
+        container
+        sx={{
+          marginLeft: { sm: "20%", md: "1.5%" },
+        }}
+      >
         <Typography
           component="h2"
           variant="h4"
           color={"black"}
           sx={{
             width: { xs: "100%", sm: "100%", md: "100%" },
-            marginLeft:{ xs: "0%", sm: "-20%", md: "1.5%" },
+            marginLeft: { xs: "0%", sm: "-20%", md: "1.5%" },
             textAlign: { xs: "center", sm: "center", md: "center" },
           }}
         >
-          <br/>
+          <br />
           Our Coating Services
-          <br/>
+          <br />
         </Typography>
-        
+
         {itemData.map((item) => (
-          <Grid item md={4}
-          xs={12} padding={1}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardHeader
-              avatar={
-                <Avatar src="/log-transparente.png" />
-              }
-              // action={
-              //   <IconButton aria-label="settings">
-              //     <MoreVertIcon />
-              //   </IconButton>
-              // }
-              title={item.title}
-              // subheader="September 14, 2016"
-            />
-            <CardMedia
-              component="img"
-              height="194"
-              image={item.img}
-              alt="Paella dish"
-            />
-            <CardContent>
-              <Typography variant="body2" color="text.secondary">
-                {item.description}
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              {/* <IconButton aria-label="add to favorites">
+          <Grid item md={4} xs={12} padding={1}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardHeader
+                avatar={<Avatar src="/log-transparente.png" />}
+                // action={
+                //   <IconButton aria-label="settings">
+                //     <MoreVertIcon />
+                //   </IconButton>
+                // }
+                title={item.title}
+                // subheader="September 14, 2016"
+              />
+              <CardMedia
+                component="img"
+                height="194"
+                image={item.img}
+                alt="Paella dish"
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                  {item.description}
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                {/* <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton>
               <IconButton aria-label="share">
                 <ShareIcon />
               </IconButton> */}
-              {/* <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <ExpandMoreIcon />
-              </ExpandMore> */}
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <CardContent>
-                <Typography paragraph>Method:</Typography>
-                <Typography paragraph>
-                  Heat 1/2 cup of the broth in a pot until simmering, add
-                  saffron and set aside for 10 minutes.
+                {Boolean(item.twodays) && (
+                  <ExpandMore
+                    expand={expanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                  >
+                    <ExpandMoreIcon />
+                  </ExpandMore>
+                )}
+              </CardActions>
+              {Boolean(item.twodays) && (
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <CardContent>
+                  <Typography component="h2" variant="h4" 
+                  sx={{
+                    color: (theme) => {
+                      if (theme.palette.mode === 'light') {
+                        return "black"
+                      }
+                      return "white"
+                    },
+                  }}>
+                  Two - Days Process
                 </Typography>
-                <Typography paragraph>
-                  Heat oil in a (14- to 16-inch) paella pan or a large, deep
-                  skillet over medium-high heat. Add chicken, shrimp and
-                  chorizo, and cook, stirring occasionally until lightly
-                  browned, 6 to 8 minutes. Transfer shrimp to a large plate and
-                  set aside, leaving chicken and chorizo in the pan. Add
-                  pimentón, bay leaves, garlic, tomatoes, onion, salt and
-                  pepper, and cook, stirring often until thickened and fragrant,
-                  about 10 minutes. Add saffron broth and remaining 4 1/2 cups
-                  chicken broth; bring to a boil.
-                </Typography>
-                <Typography paragraph>
-                  Add rice and stir very gently to distribute. Top with
-                  artichokes and peppers, and cook without stirring, until most
-                  of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
-                  medium-low, add reserved shrimp and mussels, tucking them down
-                  into the rice, and cook again without stirring, until mussels
-                  have opened and rice is just tender, 5 to 7 minutes more.
-                  (Discard any mussels that don&apos;t open.)
-                </Typography>
-                <Typography>
-                  Set aside off of the heat to let rest for 10 minutes, and then
-                  serve.
-                </Typography>
-              </CardContent>
-            </Collapse>
-          </Card>
+                <Box
+                  sx={{
+                    m: "auto",
+                    width: 320,
+                    height: 250,
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundImage: (theme) => "url(/images/two-days.png)",
+                  }}
+                />
+                  </CardContent>
+                </Collapse>
+              )}
+            </Card>
           </Grid>
         ))}
-        
       </Grid>
     </Box>
   );

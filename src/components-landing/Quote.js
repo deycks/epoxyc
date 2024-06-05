@@ -279,6 +279,7 @@ export default function Quote() {
                         <TextField
                           id="input-with-sx"
                           label="Width"
+                          name="width"
                           variant="standard"
                           type="number"
                           onChange={handleChange}
@@ -303,6 +304,7 @@ export default function Quote() {
                         <TextField
                           id="input-with-sx"
                           label="Length"
+                          name="height"
                           variant="standard"
                           type="number"
                           onChange={handleChange}
