@@ -112,10 +112,10 @@ const itemData = [
 export default function Services() {
   const theme = useTheme();
   const logos = theme.palette.mode === "light" ? darkLogos : whiteLogos;
-  const [expandedTwoDays, setExpandedTwoDays] = React.useState(false);
-  const [expanded1, setExpanded1] = React.useState(false);
-  const [expanded2, setExpanded2] = React.useState(false);
-  const [expanded3, setExpanded3] = React.useState(false);
+  const [expandedTwoDays, setExpandedTwoDays] = React.useState(true);
+  const [expanded1, setExpanded1] = React.useState(true);
+  const [expanded2, setExpanded2] = React.useState(true);
+  const [expanded3, setExpanded3] = React.useState(true);
 
   const handleExpand = (item) => {
     switch (item.item) {
